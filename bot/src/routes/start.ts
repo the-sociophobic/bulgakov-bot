@@ -1,5 +1,4 @@
 import { bot } from '../bot'
-import printUsername from '../utils/printUsername'
 
 
 const {
@@ -12,19 +11,27 @@ const registerStart = () =>
     try {
       await ctx.setChatMenuButton({
         type: 'web_app',
-        text: 'Поиск',
+        text: 'Пуск',
         web_app: {
           url: `${appURL}/#/`
         }
       })
 
-      await ctx.reply(`Привет! С помощью этого бота можно искать запчасти по номеру`,
+      await ctx.reply(`Привет! Это интерактивная экскурсия «Один день из жизни недоктора Булгакова» в городе Владикавказ. Чтобы начать, нажмите кнопку:`,
         {
           reply_markup: {
+            // keyboard: [
+            //   [
+            //     {
+            //       text: 'Отправить местоположение',
+            //       request_location: true
+            //     }
+            //   ]
+            // ],
             inline_keyboard: [
               [
                 {
-                  text: 'Поиск',
+                  text: 'Пуск',
                   web_app: {
                     url: `${appURL}/#/`
                   }

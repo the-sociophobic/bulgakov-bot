@@ -1,6 +1,8 @@
 import { Telegraf } from 'telegraf'
 
 import registerStart from './routes/start'
+import registerLocation from './routes/location'
+import registerDev from './routes/dev'
 
 
 let bot: null | Telegraf = null
@@ -8,6 +10,8 @@ let bot: null | Telegraf = null
 
 const initBotRoutes = () => {
   registerStart()
+  registerLocation()
+  registerDev()
 
   bot.launch()
   console.log(`[${process.env.BOT_NAME}] All routes set`)
