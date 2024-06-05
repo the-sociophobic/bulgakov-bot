@@ -1,3 +1,4 @@
+import printUsername from '../utils/printUsername'
 import { bot } from '../bot'
 
 
@@ -17,7 +18,7 @@ const registerStart = () =>
         }
       })
 
-      await ctx.reply(`Привет! Это интерактивная экскурсия «Один день из жизни недоктора Булгакова» в городе Владикавказ. Чтобы начать, нажмите кнопку:`,
+      await ctx.reply(`Здравствуйте, ${printUsername(ctx.from)}. Приветствуем вас на аудиоспектакле Лихорадка  по мотивам`,
         {
           reply_markup: {
             // keyboard: [

@@ -1,8 +1,16 @@
+import ProtectedRoutes from './components/ProtectedRoutes'
+import QueryWrapper from './components/QueryWrapper'
+
+
 function App() {
   return (
-    <>
-      Булгагов прогулка
-    </>
+    <QueryWrapper>
+      <div className='App'>        
+        <div className='content'>
+          <ProtectedRoutes />
+        </div>
+      </div>
+    </QueryWrapper>
   )
 }
 
