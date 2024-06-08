@@ -5,7 +5,7 @@ import QueryWrapper from './components/QueryWrapper'
 function App() {
   return (
     <QueryWrapper>
-      <div className='App'>        
+      <div className='App'>
         <div className='content'>
           <ProtectedRoutes />
         </div>
@@ -13,5 +13,6 @@ function App() {
     </QueryWrapper>
   )
 }
+
 
 export default App

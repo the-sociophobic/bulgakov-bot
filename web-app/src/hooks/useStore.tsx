@@ -1,16 +1,16 @@
 import { create } from 'zustand'
-import { UserType } from '../models'
+import { WebAppAuthObject } from '../utils/auth'
 
 
 export type StateType = {
-  user: null | UserType
-  setUser: (user: UserType) => void
+  user: null | WebAppAuthObject
+  setUser: (user: WebAppAuthObject) => void
 }
 
 
 const useStore = create<StateType>(set => ({
   user: null,
-  setUser: (user: UserType) => set({ user: user }),
+  setUser: (user: WebAppAuthObject) => set({ user: user }),
 }))
 
 

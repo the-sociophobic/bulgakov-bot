@@ -7,7 +7,10 @@ import Layout from '../components/Layout'
 
 const Chapter0: FC = () => {
   const { title } = routes[0]
-  const { Player, audioState } = usePlayer('test.mp3')
+  const {
+    Player,
+    // audioState
+  } = usePlayer('test.mp3')
 
   return (
     <Layout

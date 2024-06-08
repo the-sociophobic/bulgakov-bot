@@ -11,12 +11,14 @@ export type WebAppAuthObject = {
   photo_url?: string
   [key: string]: string | undefined
 }
-const getWebAppAuthObject = (): WebAppAuthObject | false =>
-  isWebApp() &&
-  JSON.parse(
-    Object.fromEntries(new URLSearchParams(decodeURIComponent(getAuthStringFromWebApp())))
-      .user
-  )
+const getWebAppAuthObject = (): WebAppAuthObject | undefined =>
+  !isWebApp() ?
+    undefined
+    :
+    JSON.parse(
+      Object.fromEntries(new URLSearchParams(decodeURIComponent(getAuthStringFromWebApp())))
+        .user
+    )
 
 
 export {

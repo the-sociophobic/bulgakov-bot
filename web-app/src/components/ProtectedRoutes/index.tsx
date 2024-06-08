@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import useStore from '../../hooks/useStore'
 import Loader from '../Loader'
 import routes, { RouteType } from './routes'
 import useUser from '../../hooks/useUser'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from '../../pages/Login'
 
 
