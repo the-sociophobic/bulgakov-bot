@@ -227,3 +227,36 @@ $member-height-inline: 24px
   @include font-params(14, 42, 600, $green-member)
   padding: 0 9px
   margin: 0 10px 10px 0
+
+.Player
+  display: flex
+  flex-direction: row
+  &__button
+    border: 1px solid $main-text
+    border-radius: 10px
+    line-height: 2
+    padding: 0 10px
+    cursor: pointer
+    min-width: 100px
+  &__time
+    margin-left: auto
+  &__timeline-area
+    position: relative
+    width: 100%
+    height: 30px
+  &__timeline
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 90%
+    height: 5px
+    background-color: gray
+    &__played
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      height: 100%
+      background-color: $main-text
+    &__needle

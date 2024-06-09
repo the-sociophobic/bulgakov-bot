@@ -1,0 +1,129 @@
+- Общие
+  - афиша с QR-кодом.jpg
+  - аватарка бота.jpg
+  - рамка вокруг страницы.png
+  - обрамление нижней кнопки.png
+  - обрамление плеера.png
+  - рамка вокруг карты.png
+  - 8 карт между точками.jpg
+- Увертюра
+  - Вид Владикавказа.jpg
+- Глава 1: Сбор чемодана
+  - Чемодан.jpg
+  - 3 ночных сорочки.png
+  - бритвенную кисточку.png
+  - карманную рецептуру доктора Рабова (изд. 1916 г.).png
+  - две пары носков.png
+  - фотографию профессора Мечникова.png
+  - окаменевшую французскую булку.png
+  - роман «Марья Лусьева за границей».png
+  - 6 порошков пирамидона по 0,3.png
+  - записную книжку доктора.png
+  - 3-5 рандомных предметов.png
+- Глава 2: Гадание по Булгакову
+  - Печатная машинка.png
+  - Билет в музей (можно с неровными краями).png
+- Глава 3: Одевание Булгакова
+  - Голый Булгаков.png
+  - Бабочка.png
+  - Галстук.png
+  - Бакенбарды.png
+- Глава 4: Продажа золтой цепочки
+  - Цепочка (4 вида: целая, 75%, 50%, 25%).png
+  - Хлеб.png
+  - Лекарство.png
+  - Чернила.png
+  - Водка.png
+  - 3 вида Булгакова (больной, здоровый, средний).png
+- Глава 5: Выбор Булгакова
+  - Умереть.jpg ??
+  - Быть расстреляным.jpg ??
+  - Впасть в депрессию и умереть от тоски.jpg ??
+  - Стать писателем.jpg ??
+- Глава 6: Пишем в газету
+  - Газета с пустыми местами под заголовок и текст.jpg
+  - Афиша с пустыми местами под заголовок и текст.jpg
+- Глава 7: Поиск Булгакова в толпе
+  - 360 панорама.jpg
+  - блик монокля.png
+  - Бричка заслоняющая Булгакова.png
+  - Смайлики / лайки.png
+- Глава 8: Парные предметы
+  - 2 разных карточки брюк.jpg
+  - 2 разных карточки пиджака.jpg
+  - карточка цилиндра.jpg
+  - карточка кепки.jpg
+  - 2 разных надетых на Булгакова брюк.png
+  - 2 разных надетых на Булгакова пиджака.png
+  - надетый на Булгакова цилиндр.png
+  - надетая на Булгакова кепка.png
+- Глава 9: Уход Булгакова
+  - 360 панорама Площади свободы.jpg
+  - Лошадь с телегой уходит вдаль. 3 картинки с по-разному согнутыми ногами лошади.png
+
+
+
+Лучше соблюсти такой нейминг файлов и папок:
+
+- img
+  - common
+    - avatar.jpg
+    - page-frame-.png
+    - button-frame.png
+    - player-frame.png
+    - map-frame.png
+    - 1-map.jpg, 2-map.jpg, ... 8-map.jpg
+  - 0
+    - Vladikavkaz.jpg
+  - 1
+    - chemodan.jpg
+    - 1-shirt.png, 3-shirt.png
+    - razor.png
+    - recept.png
+    - 1-socks.png, 2-socks.png
+    - Mechnikov.png
+    - bread.png
+    - book.png
+    - piramidon.png
+    - doktor-book.png
+    - 1-item.png, 3-item.png
+  - 2
+    - typewriter.png
+    - ticket.png
+  - 3
+    - Bulgakov-empty.png
+    - Bulgakov-babochka.png
+    - Bulgakov-galstuk.png
+    - Bulgakov-bakenbardy.png
+  - 4
+    - 1-chain.png, 4-chain.png
+    - bread.png
+    - drug.png
+    - ink.png
+    - vodka.png
+    - 1-Bulgakov.png, 3-Bulgakov.png
+  - 5
+    - Death.jpg ??
+    - Shot.jpg ??
+    - Depression.jpg ??
+    - Writer.jpg ??
+  - 6
+    - newspaper.jpg
+    - afisha.jpg
+  - 7
+    - 360.jpg
+    - monocle-sparkle.png
+    - brichka.png
+    - like.png
+  - 8
+    - card-trousers-1.jpg, card-trousers-2.jpg
+    - card-jacket-1.jpg, card-jacket-2.jpg
+    - card-cylinder.jpg
+    - card-cap.jpg
+    - Bulgakov-trousers-1.jpg, Bulgakov-trousers-2.jpg
+    - Bulgakov-jacket-1.jpg, Bulgakov-jacket-2.jpg
+    - Bulgakov-cylinder.jpg
+    - Bulgakov-cap.jpg
+  - 9
+    - 360.jpg
+    - horse-1.png, horse-3.png

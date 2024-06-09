@@ -141,7 +141,7 @@ const routes: RouteType[] = [
     Comp: <Login />,
   },
   {
-    to: '/login',
+    to: '/*',
     title: 'Проверка билета',
     Comp: <Login />,
   },
