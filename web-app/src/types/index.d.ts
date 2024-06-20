@@ -2,6 +2,7 @@ export {};
 
 declare global {
   interface Window {
+    ymaps3?: any
     Telegram?: any & {
       WebApp: any & {
         initData: String

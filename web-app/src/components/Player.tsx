@@ -1,12 +1,13 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
+
+import {
+  CaretRightOutlined,
+  PauseOutlined,
+  LoadingOutlined,
+  SyncOutlined
+} from '@ant-design/icons'
 
 import parseTime from '../utils/parseTime'
-
-import PlayIcon from '../assets/images/player/play.svg'
-import PauseIcon from '../assets/images/player/pause.svg'
-import LoadingIcon from '../assets/images/player/loading.svg'
-import EndedIcon from '../assets/images/player/ended.svg'
-import { useLocation } from 'react-router-dom'
 
 
 export type AudioState = 'playing' | 'paused' | 'loading' | 'ended'
@@ -31,18 +32,15 @@ const Player: FC<PlayerProps> = ({
     // return <div>{audioState}</div>
     switch(audioState) {
       case 'playing':
-        return <><PauseIcon /> Pause</>
+        return <PauseOutlined />
       case 'paused':
-        return <><PlayIcon /> Play</>
+        return <CaretRightOutlined />
       case 'loading':
-        return <><LoadingIcon /> Loading</>
+        return <LoadingOutlined />
       case 'ended':
-        return <EndedIcon />
+        return <SyncOutlined />
     }
   }
-  const location = useLocation()
-
-  useEffect(() => pause(), [location.pathname])
 
   return (
     <div className='Player'>
@@ -51,6 +49,7 @@ const Player: FC<PlayerProps> = ({
         className={`
           Player__button
           ${['loading', 'ended'].includes(audioState) && 'Player__button--disabled'}
+          ${audioState !== 'loading' && 'Player__button--loaded'}
         `}
         onClick={() => {
           if (audioState === 'playing')
@@ -62,7 +61,7 @@ const Player: FC<PlayerProps> = ({
         {getIcon()}
       </div>
 
-      <div className='d-flex flex-column w-100'>
+      <div className='d-flex flex-column w-100 flex-grow-1'>
         <div className='Player__time'>
           {parseTime(currentTime)} / {parseTime(duration)}
         </div>

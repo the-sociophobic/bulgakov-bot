@@ -112,7 +112,7 @@ const routes: RouteType[] = [
     point: {
       address: 'Улица Ленина 9',
       addressShort: 'Особый отдел Красной армии',
-      coords: [43.026762, 44.682961]
+      coords: [44.682961, 43.026762]
     }
   },
   {
@@ -122,7 +122,7 @@ const routes: RouteType[] = [
     point: {
       address: 'Бутырина 1',
       addressShort: 'Центральный парк',
-      coords: [43.02646, 44.681378]
+      coords: [44.681378, 43.02646]
     }
   },
   {

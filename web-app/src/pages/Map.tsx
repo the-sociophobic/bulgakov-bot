@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import YandexMap from '../components/YandexMap'
+
 
 export type MapPointType = {
   address: string
@@ -13,13 +15,11 @@ export type MapProps = {
 }
 
 
-const Map: FC<MapProps> = ({
-  point0,
-  point1,
-}) => {
+const Map: FC<MapProps> = (props) => {
+  
   return (
     <div>
-      Карта {point0.coords[0]}, {point0.coords[1]} → {point1.coords[0]}, {point1.coords[1]}
+      <YandexMap {...props} />
     </div>
   )
 }

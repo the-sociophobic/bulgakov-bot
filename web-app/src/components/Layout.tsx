@@ -25,7 +25,7 @@ const Layout: FC<LayoutProps> = ({
   useTitle(title)
 
   return (
-    <div className='container d-flex flex-column'>
+    <div className='Layout'>
 
       <div className='h2'>
         {title}

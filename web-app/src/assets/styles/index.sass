@@ -40,7 +40,7 @@ body
       position: relative
       width: 100vw
       overflow-x: hidden
-      padding-top: 30px
+      // padding-top: 30px
       @extend .flex-grow-1
       @extend .d-flex
       @extend .flex-column
@@ -56,6 +56,27 @@ body
 
 a
   text-decoration: none !important
+
+.Layout
+  @extend .container
+  @extend .d-flex
+  @extend .flex-column
+  padding: 40px
+  padding-left: 40px !important
+  padding-right: 40px !important
+  position: relative
+  &::before
+    z-index: -1
+    content: ''
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    height: 100%
+    background-image: url(../images/frame2.png)
+    background-repeat: no-repeat
+    background-size: contain
 
 $button-height: 39px
 .Button
@@ -74,7 +95,7 @@ $button-height: 39px
     padding: 0 16px
     height: $button-height
     line-height: $button-height
-    color: $main-background
+    color: $main-text
     font-weight: 600
     @extend .d-flex
     @extend .flex-row
@@ -233,11 +254,16 @@ $member-height-inline: 24px
   flex-direction: row
   &__button
     border: 1px solid $main-text
-    border-radius: 10px
-    line-height: 2
-    padding: 0 10px
     cursor: pointer
-    min-width: 100px
+    width: 50px
+    height: 50px
+    border-radius: 50px
+    @extend .d-flex
+    @extend .justify-content-center
+    @extend .align-items-center
+    &--loaded
+      .anticon
+        transform: scale(2)
   &__time
     margin-left: auto
   &__timeline-area
@@ -260,3 +286,8 @@ $member-height-inline: 24px
       height: 100%
       background-color: $main-text
     &__needle
+
+
+.YandexMap
+  width: 100%
+  height: 200px

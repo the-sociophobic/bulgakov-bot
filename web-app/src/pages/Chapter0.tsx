@@ -10,7 +10,7 @@ const Chapter0: FC = () => {
   const {
     Player,
     // audioState
-  } = usePlayer('test.mp3')
+  } = usePlayer('0.mp3')
 
   return (
     <Layout

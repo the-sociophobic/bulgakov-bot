@@ -1,10 +1,13 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { debounce } from 'lodash'
 
 import Player, { AudioState } from '../components/Player'
+import { useLocation } from 'react-router-dom'
 
 
 const AUDIO_FOLDER = 'https://storage.yandexcloud.net/cdn.tochkadostupa.spb.ru/the_sociophobic/Bulgakov/'
+
+const audioInstance = new Audio()
 
 
 const usePlayer = (src: string) => {
@@ -13,36 +16,42 @@ const usePlayer = (src: string) => {
   const [duration, setDuration] = useState(0)
 
   const audio = useMemo(() => {
-    const audio = new Audio()
-
-    audio.addEventListener('canplay', () => {
-      setDuration(audio.duration)
-      // audio.play()
+    audioInstance.addEventListener('canplay', () => {
+      setDuration(audioInstance.duration)
+      // audioInstance.play()
       setAudioState('paused')
     })
     
-    audio.addEventListener('ended', () => {
+    audioInstance.addEventListener('ended', () => {
       setAudioState('ended')
     })
 
-    audio.addEventListener('play', () => {
+    audioInstance.addEventListener('play', () => {
       setAudioState('playing')
     })
 
-    audio.addEventListener('pause', () => {
+    audioInstance.addEventListener('pause', () => {
       setAudioState('paused')
     })
 
-    audio.addEventListener('timeupdate', debounce(() => {
-      setCurrentTime(audio.currentTime)
+    audioInstance.addEventListener('timeupdate', debounce(() => {
+      setCurrentTime(audioInstance.currentTime)
     }, 1))
 
-    audio.preload = 'auto'
-    audio.src = AUDIO_FOLDER + src
-    audio.load()
+    audioInstance.preload = 'auto'
+    audioInstance.src = AUDIO_FOLDER + src
+    audioInstance.load()
 
-    return audio
+    return audioInstance
   }, [src])
+
+  const location = useLocation()
+
+  useEffect(() => {
+    console.log(audio)
+    audio.pause()
+  }, [location.pathname, location.search])
+
 
   const props = {
     audioState,

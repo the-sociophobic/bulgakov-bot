@@ -1,7 +1,7 @@
 :root {
   color-scheme: light dark;
 
-  --main-background: #171B2D;
+  --main-background: #34302d;
   --main-text: white;
   --main-blue: #00AEEF;
   --form-bg: rgba(240, 239, 256, .2);
@@ -20,8 +20,8 @@
   --button-border: 1px solid #26DC38;
   --green-box-border: .5px solid #01FF6999;
   --green-box-background: linear-gradient(0deg, rgba(1, 255, 105, 0.03), rgba(1, 255, 105, 0.03));
-  --green-button-primary: #01FE01;
-  --green-button-secondary: #00FFE0;
+  --green-button-primary: #8d5d35;
+  --green-button-secondary: #8d4635;
   --pink-primary: #F635E0;
   --pink-secondary: #B401D4;
 }

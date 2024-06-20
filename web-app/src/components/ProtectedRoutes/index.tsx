@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 import useStore from '../../hooks/useStore'
 import Loader from '../Loader'
@@ -20,7 +20,7 @@ const ProtectedRoutes: React.FC = () => {
   const { data: user, isLoading: loadingUser } = useUser()
 
   const router = useMemo(
-    () => createBrowserRouter(
+    () => createHashRouter(
       mapRoutes(user ? routes : routes.slice(-2))
     )
     , [user]

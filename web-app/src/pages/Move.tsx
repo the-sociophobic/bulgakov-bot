@@ -12,7 +12,7 @@ const Move: FC = () => {
   const chapterNumber = parseInt(chapter || '0')
   const point0 = routes[chapterNumber].point!
   const point1 = routes[chapterNumber + 1].point!
-  const { Player, audioState } = usePlayer('test.mp3')
+  const { Player, audioState } = usePlayer(`${chapterNumber}.mp3`)
 
   return (
     <Layout
