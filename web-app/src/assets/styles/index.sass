@@ -210,8 +210,14 @@ $button-height: 39px
       100%
         transform: scale(2)
 
-$avatar-size: 24px
 .Avatar
+  position: relative
+  &__image
+    position: absolute
+    top: 0
+    left: 0
+
+$avatar-size: 24px
 .ItemImg
   width: $avatar-size
   height: $avatar-size
@@ -289,9 +295,13 @@ $member-height-inline: 24px
     &__needle
 
 
-.YandexMap
+.YandexMap__container
   width: 100%
   height: 200px
+  overflow-y: hidden
+  .YandexMap
+    width: 100%
+    height: 240px
 
 
 .Img
@@ -311,3 +321,34 @@ $member-height-inline: 24px
 .Link
   &--disabled
     opacity: .5
+
+
+.Chapter3Clothing
+  position: relative
+  .Item
+    position: relative
+    padding-left: 15px
+    &::before,
+    &::after
+      position: absolute
+      left: 5px
+      top: 50%
+      transform: translate(-50%, -50%)
+      border-radius: 20px
+    &::before
+      content: ''
+      width: 12px
+      height: 12px
+      border: 1px solid $black
+    &--enabled
+      &::after
+        content: ''
+        width: 7px
+        height: 7px
+        background-color: $main-text
+  .Avatar__container
+    z-index: -1
+    position: absolute
+    top: -40px
+    right: -20px
+    width: 80vw

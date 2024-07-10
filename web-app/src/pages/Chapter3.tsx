@@ -1,20 +1,22 @@
 import { FC } from 'react'
 
 import ChapterLayout from '../components/ChapterLayout'
+import Chapter3Clothing from '../components/Chapter3Clothing'
 
 
 const Chapter3: FC = () => {
   return (
     <ChapterLayout
       number={3}
-      description={`в которой еще не известный писатель М.А. Булгаков защищает великого писателя А.С. Пушкина  от своих современников.
-      
-Именно в этой главе вы узнаете, что М.А. Булгаков решил стать пистателем.
-
-Пиши как писатель, выгляди как писатель`}
-      navigationTitle='Готово'
+      description={`
+        … в которой пока еще НЕ писатель Михаил Булгаков приезжает в город, где великий поэт А.С. Пушкин побывал за сто лет до до.
+        Помогите Михаилу Булгакову найти себя.
+        Примерьте элементы гардероба на писателя.
+        Пиши как писатель! Выгляди как писатель!
+      `}
+      navigationTitle='КРАСАВЕЦ!'
     >
-      Одень Булгакова
+      <Chapter3Clothing />
     </ChapterLayout>
   )
 }

@@ -63,52 +63,52 @@ const YandexMap: FC<YandexMapProps> = ({
   ]
 
   return (
-    <div
-      className='YandexMap mb-5'
-    >
-      <YMap
-        location={{ center: center, zoom: getZoom(point0, point1) }}
-      >
-        <YMapDefaultSchemeLayer
-          customization={[
-            // Делаем прозрачными все геометрии водных объектов.
-            {
-              tags: {
-                any: ['poi', 'transit']
+    <div className='YandexMap__container mb-5'>
+      <div className='YandexMap'>
+        <YMap
+          location={{ center: center, zoom: getZoom(point0, point1) }}
+        >
+          <YMapDefaultSchemeLayer
+            customization={[
+              // Делаем прозрачными все геометрии водных объектов.
+              {
+                tags: {
+                  any: ['poi', 'transit']
+                },
+                // elements: 'geometry',
+                stylers: [
+                  {
+                    opacity: 0
+                  }
+                ]
               },
-              // elements: 'geometry',
-              stylers: [
-                {
-                  opacity: 0
-                }
-              ]
-            },
-            // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
-            // {
-            //   tags: {
-            //     any: ['poi', 'transit_location']
-            //   },
-            //   elements: 'label.text.fill',
-            //   stylers: [
-            //     {
-            //       color: '#0000DD'
-            //     }
-            //   ]
-            // }
-          ]}
-        />
-        <YMapDefaultFeaturesLayer />
-        <YMapDefaultMarker
-          title='Старт'
-          color='brown'
-          coordinates={point0.coords}
-        />
-        <YMapDefaultMarker
-          title='Финиш'
-          color='red'
-          coordinates={point1.coords}
-        />
-      </YMap>
+              // Меняем цвет подписей для всех POI и узлов сети общественного транспорта.
+              // {
+              //   tags: {
+              //     any: ['poi', 'transit_location']
+              //   },
+              //   elements: 'label.text.fill',
+              //   stylers: [
+              //     {
+              //       color: '#0000DD'
+              //     }
+              //   ]
+              // }
+            ]}
+          />
+          <YMapDefaultFeaturesLayer />
+          <YMapDefaultMarker
+            title='Отсюда'
+            color='brown'
+            coordinates={point0.coords}
+          />
+          <YMapDefaultMarker
+            title='Сюда'
+            color='red'
+            coordinates={point1.coords}
+          />
+        </YMap>
+      </div>
     </div>
   )
 }
