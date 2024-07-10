@@ -8,6 +8,7 @@ export type ImgProps = {
   className?: string
   alt?: string
   percentage?: string
+  imgTop?: string
   noCrop?: boolean
   urlParams?: string
   onClick?: () => void
@@ -47,7 +48,10 @@ class Img extends React.Component<ImgProps, ImgState> {
         ${this.props.className}
         ${typeof this.state.portrait === "undefined" && "Img--hidden"}
       `}
-      style={this.props.percentage ? { width: this.props.percentage } : {}}
+      style={{
+        width: this.props.percentage,
+        top: this.props.imgTop
+      }}
       onClick={this.props.onClick}
     >
       <img

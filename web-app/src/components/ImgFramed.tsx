@@ -8,6 +8,7 @@ export type ImgFramedProps = ImgProps & {
   width: number
   height: number
   imgPercentage?: number
+  imgTop?: string
   alt?: string
 }
 
