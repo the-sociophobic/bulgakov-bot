@@ -25,6 +25,7 @@ const TextAnimation: FC<TextAnimationProps> = ({
   useEffect(() => {
     const interval = setInterval(() => {
       if (state === 'playing') {
+        console.log(state)
         let nextFrameNumber = frameNumber + 1
 
         if (nextFrameNumber >= frames.length) {
@@ -40,7 +41,7 @@ const TextAnimation: FC<TextAnimationProps> = ({
     }, timeoutStepMs || TIMEOUT_STEP_MS)
 
     return () => clearInterval(interval)
-  }, [frameNumber])
+  }, [frameNumber, state, timeoutStepMs])
 
   return (
     <>
