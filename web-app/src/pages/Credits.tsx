@@ -4,7 +4,7 @@ import routes from '../components/ProtectedRoutes/routes'
 import Layout from '../components/Layout'
 
 
-const Chapter0: FC = () => {
+const Credits: FC = () => {
   const { title } = routes[10]
 
   return (
@@ -28,4 +28,4 @@ const Chapter0: FC = () => {
 }
 
 
-export default Chapter0
+export default Credits

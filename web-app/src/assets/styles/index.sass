@@ -352,3 +352,56 @@ $member-height-inline: 24px
     top: -40px
     right: -20px
     width: 80vw
+
+.ImgFramed
+  position: relative
+  border: 1px solid $main-text
+  background-color: $main-background
+  &__container
+    width: 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    .Img
+      width: 115%
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+  &__alt
+    position: absolute
+    bottom: -15px
+    left: 50%
+    @include font-params(12, 15)
+    transform: translateX(-50%)
+  &--anim-0,
+  &--anim-1,
+  &--anim-2,
+  &--anim-3
+    @keyframes tilt-shaking
+      0%
+        transform: rotate(0deg)
+      25%
+        transform: rotate(5deg)
+      50%
+        transform: rotate(0deg)
+      75%
+        transform: rotate(-5deg)
+      100%
+        transform: rotate(0deg)
+    animation: tilt-shaking 1s ease-in-out infinite
+  &--anim-1
+    animation-delay: .1s
+  &--anim-2
+    animation-delay: .2s
+  &--anim-3
+    animation-delay: .3s
+
+.Chapter1Cloth
+  .chemodan-row
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    @extend .d-flex
+    @extend .flex-row

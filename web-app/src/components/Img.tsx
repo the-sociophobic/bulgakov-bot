@@ -3,22 +3,23 @@ import React from 'react'
 // import ResizeObserver from 'resize-observer-polyfill'
 
 
-type Props = {
+export type ImgProps = {
   src?: string
   className?: string
   alt?: string
+  percentage?: string
   noCrop?: boolean
   urlParams?: string
   onClick?: () => void
 }
 
-type State = {
+export type ImgState = {
   portrait: boolean | undefined,
   containerRatio: number,
 }
 
 
-class Img extends React.Component<Props, State> {
+class Img extends React.Component<ImgProps, ImgState> {
   state = {
     portrait: undefined,
     containerRatio: 0,
@@ -46,6 +47,7 @@ class Img extends React.Component<Props, State> {
         ${this.props.className}
         ${typeof this.state.portrait === "undefined" && "Img--hidden"}
       `}
+      style={this.props.percentage ? { width: this.props.percentage } : {}}
       onClick={this.props.onClick}
     >
       <img
