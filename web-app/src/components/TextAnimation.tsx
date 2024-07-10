@@ -14,7 +14,7 @@ export type TextAnimationProps = {
 
 const TextAnimation: FC<TextAnimationProps> = ({
   state,
-  play,
+  // play,
   pause,
   frames,
   timeoutStepMs,
