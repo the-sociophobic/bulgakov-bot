@@ -1,11 +1,25 @@
-import Login from '../../pages/Login'
 import Start from '../../pages/Start'
 import Disclaimer from '../../pages/Disclaimer'
 import Chapter1 from '../../pages/Chapter1'
 import Chapter2 from '../../pages/Chapter2'
 import Chapter3 from '../../pages/Chapter3'
 import Chapter4 from '../../pages/Chapter4'
+
 import Chapter5 from '../../pages/Chapter5'
+import Doktor1 from '../../pages/Chapter5/Doktor1'
+import Border1 from '../../pages/Chapter5/Border1'
+import Career1 from '../../pages/Chapter5/Career1'
+import Doktor2White from '../../pages/Chapter5/Doktor2White'
+import Doktor2Red from '../../pages/Chapter5/Doktor2Red'
+import Border2Tiflis from '../../pages/Chapter5/Border2Tiflis'
+import Border2France from '../../pages/Chapter5/Border2France'
+import Career2Magazine from '../../pages/Chapter5/Career2Magazine'
+import Career2Moscow from '../../pages/Chapter5/Career2Moscow'
+import Death from '../../pages/Chapter5/Death'
+import Depression from '../../pages/Chapter5/Depression'
+import Shot from '../../pages/Chapter5/Shot'
+import Writer from '../../pages/Chapter5/Writer'
+
 import Chapter6 from '../../pages/Chapter6'
 import Chapter7 from '../../pages/Chapter7'
 import Chapter8 from '../../pages/Chapter8'
@@ -151,7 +165,73 @@ const routes: RouteType[] = [
     title: 'Начало',
     Comp: <Start />,
   },
+  {
+    to: '/chapter-5-1-doktor',
+    title: 'Путь врача',
+    Comp: <Doktor1 />,
+  },
+  {
+    to: '/chapter-5-1-border',
+    title: 'Путь заграницы',
+    Comp: <Border1 />,
+  },
+  {
+    to: '/chapter-5-1-career',
+    title: 'Путь писателя',
+    Comp: <Career1 />,
+  },
+  {
+    to: '/chapter-5-2-doktor-red',
+    title: 'Путь врача у Красных',
+    Comp: <Doktor2Red />,
+  },
+  {
+    to: '/chapter-5-2-doktor-white',
+    title: 'Путь врача у Белых',
+    Comp: <Doktor2White />,
+  },
+  {
+    to: '/chapter-5-2-border-tiflis',
+    title: 'Жизнь в Тифлисе',
+    Comp: <Border2Tiflis />,
+  },
+  {
+    to: '/chapter-5-2-border-france',
+    title: 'Жизнь во Франции',
+    Comp: <Border2France />,
+  },
+  {
+    to: '/chapter-5-2-career-magazine',
+    title: 'Путь писателя',
+    Comp: <Career2Magazine />,
+  },
+  {
+    to: '/chapter-5-2-career-moscow',
+    title: 'Путь писателя',
+    Comp: <Career2Moscow />,
+  },
+  {
+    to: '/death',
+    title: 'Смерть',
+    Comp: <Death />,
+  },
+  {
+    to: '/depression',
+    title: 'Депрессия',
+    Comp: <Depression />,
+  },
+  {
+    to: '/shot',
+    title: 'Расстрел',
+    Comp: <Shot />,
+  },
+  {
+    to: '/writer',
+    title: 'Карьера писателя',
+    Comp: <Writer />,
+  },
 ]
 
 
 export default routes
+

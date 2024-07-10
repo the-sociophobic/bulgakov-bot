@@ -20,10 +20,8 @@ const ProtectedRoutes: React.FC = () => {
   const { data: user, isLoading: loadingUser } = useUser()
 
   const router = useMemo(
-    () => createHashRouter(
-      mapRoutes(user ? routes : routes.slice(-2))
-    )
-    , [user]
+    () => createHashRouter(mapRoutes(routes))
+    , []
   )
 
   useStore.setState({ user })

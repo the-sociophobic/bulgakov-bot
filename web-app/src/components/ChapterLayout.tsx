@@ -38,7 +38,7 @@ const ChapterLayout: FC<ChapterLayoutProps> = ({
       .map((navigation): NavigationProps => ({
         title: navigationTitle || navigation.title || 'Продолжить',
         disabled: navigation.disabled || false,
-        to: navigation.goToMove ? `/move?chapter=${number}` : undefined,
+        to: navigation.goToMove ? `/move?chapter=${number}` : navigation.to,
         // onFirstClick: navigation.onFirstClick
         onClick: (e: any) => {
           if (navigation.goToMove)
