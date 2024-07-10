@@ -10,8 +10,8 @@ import useParams from '../hooks/useParams'
 const Move: FC = () => {
   const { chapter } = useParams()
   const chapterNumber = parseInt(chapter || '0')
-  const point0 = routes[chapterNumber].point!
-  const point1 = routes[chapterNumber + 1].point!
+  const point0 = routes[chapterNumber + 1].point!
+  const point1 = routes[chapterNumber + 2].point!
   const { Player, audioState } = usePlayer(`${chapterNumber}.mp3`)
 
   return (

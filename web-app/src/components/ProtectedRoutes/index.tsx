@@ -5,7 +5,7 @@ import useStore from '../../hooks/useStore'
 import Loader from '../Loader'
 import routes, { RouteType } from './routes'
 import useUser from '../../hooks/useUser'
-import Login from '../../pages/Login'
+import Start from '../../pages/Start'
 
 
 const mapRoutes = (routes: RouteType[]) =>
@@ -13,7 +13,7 @@ const mapRoutes = (routes: RouteType[]) =>
     key: route.to,
     path: route.to,
     element: route.Comp    ,
-    errorElement: <Login />
+    errorElement: <Start />
   }))
 
 const ProtectedRoutes: React.FC = () => {

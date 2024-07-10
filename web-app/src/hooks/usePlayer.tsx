@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react'
 import { debounce } from 'lodash'
 
-import Player, { AudioState } from '../components/Player'
+import Player from '../components/Player'
 import { useLocation } from 'react-router-dom'
+import { AnimationState } from '../utils/constants'
 
 
 const AUDIO_FOLDER = 'https://storage.yandexcloud.net/cdn.tochkadostupa.spb.ru/the_sociophobic/Bulgakov/'
@@ -11,7 +12,7 @@ const audioInstance = new Audio()
 
 
 const usePlayer = (src: string) => {
-  const [audioState, setAudioState] = useState<AudioState>('loading')
+  const [audioState, setAudioState] = useState<AnimationState>('loading')
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
 

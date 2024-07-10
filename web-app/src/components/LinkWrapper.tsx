@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link, NavLink } from 'react-router-dom'
 
@@ -14,6 +14,7 @@ export type LinkWrapperProps = {
   disabled?: boolean
   exact?: boolean
   outerRef?: any
+  onFirstClick?: () => void
 }
 
 
@@ -28,14 +29,30 @@ const LinkWrapper: React.FunctionComponent<LinkWrapperProps> = ({
   disabled,
   exact,
   outerRef,
+  onFirstClick,
   ...other
 }) => {
+  const onClickLocal = (e: any) => {
+    if (disabled)
+      return
+
+    onClick?.(e)
+  }
+  const onClickLocalWithBackButton = (e: any) => {
+    window?.Telegram?.WebApp?.BackButton?.show?.()
+    onClickLocal(e)
+  }
+
   return disabled || !to ?
     <span
       ref={outerRef}
-      className={`Link Link--disabled ${className}`}
+      className={`
+        Link
+        ${disabled && 'Link--disabled'}
+        ${className}`
+      }
       style={style}
-      onClick={(e: any) => onClick?.(e)}
+      onClick={onClickLocal}
       {...other}
     >
       {children}
@@ -49,7 +66,7 @@ const LinkWrapper: React.FunctionComponent<LinkWrapperProps> = ({
         href={to}
         target={sameTab ? '' : '_blank'}
         rel="noreferrer"
-        onClick={(e: any) => onClick?.(e)}
+        onClick={onClickLocal}
         {...other}
       >
         {children}
@@ -65,10 +82,7 @@ const LinkWrapper: React.FunctionComponent<LinkWrapperProps> = ({
             isActive ? `Link--active ${activeClassName}` : `Link ${className}`
           }
           style={style}
-          onClick={(e: any) => {
-            window?.Telegram?.WebApp?.BackButton?.show?.()
-            onClick?.(e)
-          }}
+          onClick={onClickLocalWithBackButton}
           {...other}
         >
           {children}
@@ -80,10 +94,7 @@ const LinkWrapper: React.FunctionComponent<LinkWrapperProps> = ({
           to={to}
           className={`Link ${className}`}
           style={style}
-          onClick={(e: any) => {
-            window?.Telegram?.WebApp?.BackButton?.show?.()
-            onClick?.(e)
-          }}
+          onClick={onClickLocalWithBackButton}
           {...other}
         >
           {children}

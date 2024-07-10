@@ -8,12 +8,11 @@ import {
 } from '@ant-design/icons'
 
 import parseTime from '../utils/parseTime'
+import { AnimationState } from '../utils/constants'
 
-
-export type AudioState = 'playing' | 'paused' | 'loading' | 'ended'
 
 export type PlayerProps = {
-  audioState: AudioState
+  audioState: AnimationState
   play: () => void
   pause: () => void
   currentTime: number

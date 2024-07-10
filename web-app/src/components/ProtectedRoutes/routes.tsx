@@ -1,5 +1,6 @@
 import Login from '../../pages/Login'
-import Chapter0 from '../../pages/Chapter0'
+import Start from '../../pages/Start'
+import Disclaimer from '../../pages/Disclaimer'
 import Chapter1 from '../../pages/Chapter1'
 import Chapter2 from '../../pages/Chapter2'
 import Chapter3 from '../../pages/Chapter3'
@@ -26,9 +27,19 @@ export type RouteType = {
 
 const routes: RouteType[] = [
   {
-    to: '/chapter-0',
-    title: 'Увертюра',
-    Comp: <Chapter0 />,
+    to: '/start',
+    title: 'Начало',
+    Comp: <Start />,
+    point: {
+      address: 'Никитина 22',
+      addressShort: 'Музей Пушкина',
+      coords: [44.681387, 43.033782]
+    }
+  },
+  {
+    to: '/disclaimer',
+    title: 'Правила пользования ботом',
+    Comp: <Disclaimer />,
     point: {
       address: 'Никитина 22',
       addressShort: 'Музей Пушкина',
@@ -37,7 +48,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-1',
-    title: 'Глава I',
+    title: 'Сцена I',
     Comp: <Chapter1 />,
     point: {
       address: 'Никитина 22',
@@ -47,7 +58,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-2',
-    title: 'Глава II',
+    title: 'Сцена II',
     Comp: <Chapter2 />,
     point: {
       address: 'Кирова 50',
@@ -57,7 +68,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-3',
-    title: 'Глава III',
+    title: 'Сцена III',
     Comp: <Chapter3 />,
     point: {
       address: 'Кирова 37',
@@ -67,7 +78,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-4',
-    title: 'Глава IV',
+    title: 'Сцена IV',
     Comp: <Chapter4 />,
     point: {
       address: 'Маяковского 9',
@@ -77,7 +88,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-5',
-    title: 'Глава V',
+    title: 'Сцена V',
     Comp: <Chapter5 />,
     point: {
       address: 'Проспект Мира 43',
@@ -87,7 +98,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-6',
-    title: 'Глава VI',
+    title: 'Сцена VI',
     Comp: <Chapter6 />,
     point: {
       address: 'Проспект Мира 34',
@@ -97,7 +108,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-7',
-    title: 'Глава VII',
+    title: 'Сцена VII',
     Comp: <Chapter7 />,
     point: {
       address: 'Площадь Ленина 3',
@@ -107,7 +118,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-8',
-    title: 'Глава VIII',
+    title: 'Сцена VIII',
     Comp: <Chapter8 />,
     point: {
       address: 'Улица Ленина 9',
@@ -117,7 +128,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/chapter-9',
-    title: 'Глава IX',
+    title: 'Сцена IX',
     Comp: <Chapter9 />,
     point: {
       address: 'Бутырина 1',
@@ -136,14 +147,9 @@ const routes: RouteType[] = [
     Comp: <Move />,
   },
   {
-    to: '/login',
-    title: 'Проверка билета',
-    Comp: <Login />,
-  },
-  {
     to: '/*',
-    title: 'Проверка билета',
-    Comp: <Login />,
+    title: 'Начало',
+    Comp: <Start />,
   },
 ]
 

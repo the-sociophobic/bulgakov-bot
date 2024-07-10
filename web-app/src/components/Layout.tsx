@@ -1,12 +1,18 @@
 import { FC, ReactNode } from 'react'
+
 import useTitle from '../hooks/useTitle'
 import LinkWrapper, { LinkWrapperProps } from './LinkWrapper'
 import Button, { ButtonProps } from './Button'
 
 
-export type NavigationProps = Pick<LinkWrapperProps, 'disabled' | 'to'> & Pick<ButtonProps, 'title'> & {
-  closeWebApp?: boolean
-}
+export type EventType = (e: any) => void
+export type NavigationProps = Pick<LinkWrapperProps, 'disabled' | 'to' | 'onFirstClick' | 'onClick'>
+  & Pick<ButtonProps, 'title'>
+  & {
+    closeWebApp?: boolean
+    goToMove?: boolean
+    onClicks?: EventType[]
+  }
 
 export type LayoutProps = {
   title: string
@@ -41,13 +47,17 @@ const Layout: FC<LayoutProps> = ({
 
       {navigations.map(navigation =>
         <LinkWrapper
-          className='mt-auto mb-5'
+          className='mt-auto'
           key={navigation.title}
           to={navigation.to}
           disabled={navigation.disabled}
-          onClick={() => navigation.closeWebApp && window.Telegram?.WebApp?.close?.()}
+          onClick={(e: any) => {
+            navigation.onClick?.(e)
+            navigation.closeWebApp && window.Telegram?.WebApp?.close?.()
+          }}
+          onFirstClick={navigation.onFirstClick}
         >
-          <Button>
+          <Button className='mb-5'>
             {navigation.title}
           </Button>
         </LinkWrapper>

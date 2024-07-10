@@ -62,12 +62,12 @@ a
   @extend .d-flex
   @extend .flex-column
   padding: 40px
-  padding-left: 40px !important
-  padding-right: 40px !important
+  padding-left: 20px !important
+  padding-right: 20px !important
   position: relative
   &::before
     z-index: -1
-    content: ''
+    // content: ''
     position: absolute
     top: 0
     left: 50%
@@ -91,27 +91,29 @@ $button-height: 39px
   &--pink,
   &--transparent
     width: 100%
-    border-radius: 12px
+    // border-radius: 12px
     padding: 0 16px
     height: $button-height
     line-height: $button-height
     color: $main-text
     font-weight: 600
+    background-color: $main-background
+    border: 3px solid $black
     @extend .d-flex
     @extend .flex-row
     @extend .align-items-center
     @extend .text-center
-    box-shadow: $button-box-shadow
+    // box-shadow: $button-box-shadow
     &:hover:enabled
       opacity: 0.85
 
   &--green
-    background: linear-gradient(269.55deg, $green-button-primary 0.39%, $green-button-secondary 95.73%)
-    border: 1px solid $button-border
-    border: 0
+    // background: linear-gradient(269.55deg, $green-button-primary 0.39%, $green-button-secondary 95.73%)
+    // border: 1px solid $button-border
+    // border: 0
   &--pink
-    background: linear-gradient(269.55deg, $pink-secondary 0.39%, $pink-primary 95.73%)
-    border: 1px solid $pink-primary
+    // background: linear-gradient(269.55deg, $pink-secondary 0.39%, $pink-primary 95.73%)
+    // border: 1px solid $pink-primary
   &--transparent
     box-shadow: none
     background: none
@@ -122,21 +124,20 @@ $button-height: 39px
   width: 100%
   position: relative
   &__label
-    @extend .h4
-    @extend .mb-3
+    @extend .h6
+    @extend .mb-2
+    color: $black
   &__input
     width: 100%
     background-color: $main-background
-    border-radius: 15px
-    padding: 8px 15px
+    border-radius: 0
+    padding: 0 10px
     color: $main-text
-    line-height: 2
+    line-height: $button-height
     outline: none
-    border: .5px solid $secondary-text
-    transition: border-color .35s
+    border: 0
+    box-shadow: inset 0px 0px 0px 1px $main-text
     position: relative
-    &:focus
-      border-color: $main-text
     // Remove arrows
     /* Chrome, Safari, Edge, Opera */
     &::-webkit-outer-spin-button,
@@ -291,3 +292,22 @@ $member-height-inline: 24px
 .YandexMap
   width: 100%
   height: 200px
+
+
+.Img
+  width: 100%
+  // transition: opacity $menu-transition
+  &--hidden
+    opacity: 0
+  &__img
+    width: 100%
+    &--portrait
+      width: 100%
+      height: auto
+    &--landscape
+      width: auto
+      height: 100%
+
+.Link
+  &--disabled
+    opacity: .5

@@ -11,9 +11,11 @@ export type WebAppAuthObject = {
   photo_url?: string
   [key: string]: string | undefined
 }
-const getWebAppAuthObject = (): WebAppAuthObject | undefined =>
+// const getWebAppAuthObject = (): WebAppAuthObject | undefined =>
+const getWebAppAuthObject = (): WebAppAuthObject =>
   !isWebApp() ?
-    undefined
+    // undefined
+    mockInitData
     :
     JSON.parse(
       Object.fromEntries(new URLSearchParams(decodeURIComponent(getAuthStringFromWebApp())))

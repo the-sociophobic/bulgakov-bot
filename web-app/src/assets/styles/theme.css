@@ -1,8 +1,8 @@
 :root {
   color-scheme: light dark;
 
-  --main-background: #34302d;
-  --main-text: white;
+  --main-background: white;
+  --main-text: black;
   --main-blue: #00AEEF;
   --form-bg: rgba(240, 239, 256, .2);
   --secondary-text: #B0B0B0;
