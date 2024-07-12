@@ -1,9 +1,11 @@
 import { FC } from 'react'
 
-import routes from '../components/ProtectedRoutes/routes'
+// import routes from '../components/ProtectedRoutes/routes'
 import usePlayer from '../hooks/usePlayer'
 import Layout from '../components/Layout'
-import Map from './Map'
+// import Map from './Map'
+import Chapter3Avatar from '../components/Chapter3Avatar'
+import ImgFramed from '../components/ImgFramed'
 import useParams from '../hooks/useParams'
 
 import move2 from '../assets/images/move/2.jpg'
@@ -14,16 +16,13 @@ import move6 from '../assets/images/move/6.jpg'
 import move7 from '../assets/images/move/7.jpg'
 import move8 from '../assets/images/move/8.jpg'
 import move9 from '../assets/images/move/9.jpg'
-import ImgFramed from '../components/ImgFramed'
-import Avatar from '../components/Avatar'
-import Chapter3Avatar from '../components/Chapter3Avatar'
 
 
 const Move: FC = () => {
   const { chapter } = useParams()
   const chapterNumber = parseInt(chapter || '0')
-  const point0 = routes[chapterNumber + 1].point!
-  const point1 = routes[chapterNumber + 2].point!
+  // const point0 = routes[chapterNumber + 1].point!
+  // const point1 = routes[chapterNumber + 2].point!
   const { Player, audioState } = usePlayer(`${chapterNumber}.mp3`)
   const { text, img } = dictionary[chapterNumber - 1]
   const showBulgakov = [3, 4, 5, 6, 7, 8].includes(chapterNumber)

@@ -11,7 +11,7 @@ import platokImg from '../assets/images/3/Bulgacov-platok.png'
 import Avatar from './Avatar'
 
 
-const dictionary: { [key: string]: { src: string, alt: string } } = {
+export const dictionary: { [key: string]: { src: string, alt: string } } = {
   babochka: { src: babochkaImg, alt: 'Бабочка' },
   galstuk: { src: galstukImg, alt: 'Галстук' },
   hat: { src: hatImg, alt: 'Шляпа' },
