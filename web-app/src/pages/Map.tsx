@@ -18,9 +18,7 @@ export type MapProps = {
 const Map: FC<MapProps> = (props) => {
   
   return (
-    <div>
-      <YandexMap {...props} />
-    </div>
+    <YandexMap {...props} />
   )
 }
 

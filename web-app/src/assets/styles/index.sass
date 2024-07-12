@@ -297,7 +297,7 @@ $member-height-inline: 24px
 
 .YandexMap__container
   width: 100%
-  height: 200px
+  height: 170px
   overflow-y: hidden
   .YandexMap
     width: 100%
@@ -346,12 +346,23 @@ $member-height-inline: 24px
         width: 7px
         height: 7px
         background-color: $main-text
-  .Avatar__container
+  &__Avatar__container
     z-index: -1
     position: absolute
     top: -40px
     right: -20px
     width: 80vw
+
+.Move__Avatar__container
+  z-index: 100
+  position: absolute
+  bottom: 55vh
+  right: -20px
+  width: 70vw
+
+.NavigationZ
+  position: relative
+  z-index: 1000
 
 .ImgFramed
   position: relative

@@ -58,7 +58,6 @@ const Chapter2: FC = () => {
     >
       {!ticketShown ?
         <>
-          <Img src={TypewriterImg} className='mb-3'/>
           {!isSent ?
             <Input
               placeholder='Ваш вопрос Булгакову...'
@@ -68,10 +67,11 @@ const Chapter2: FC = () => {
             :
             <>
               Вы: {text}
-              <br /><br />    
+              <br /><br />
               Булгаков: {TextAnimation}
             </>
           }
+          <Img src={TypewriterImg} className='mb-3' />
         </>
         :
         <>

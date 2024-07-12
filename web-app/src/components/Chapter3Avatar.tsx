@@ -9,7 +9,6 @@ import hatImg from '../assets/images/3/Bulgacov-hat.png'
 import monocleImg from '../assets/images/3/Bulgacov-monocle.png'
 import platokImg from '../assets/images/3/Bulgacov-platok.png'
 import Avatar from './Avatar'
-import Chapter3Avatar from './Chapter3Avatar'
 
 
 const dictionary: { [key: string]: { src: string, alt: string } } = {
@@ -21,7 +20,14 @@ const dictionary: { [key: string]: { src: string, alt: string } } = {
 }
 
 
-const Chapter3Clothing: FC = () => {
+export type Chapter3AvatarProps = {
+  containerClassName?: string
+}
+
+
+const Chapter3Avatar: FC<Chapter3AvatarProps> = ({
+  containerClassName
+}) => {
   const { chapter3 } = useStore()
   const items = Object.entries(chapter3.items)
     .map(([name, enabled]) => ({
@@ -30,30 +36,17 @@ const Chapter3Clothing: FC = () => {
       ...dictionary[name]
     }))
 
-  const { setChapter3 } = useStore()
-  const setItemEnabled = (itemName: string, itemEnabled: boolean) => setChapter3({
-    ...chapter3,
-    items: {
-      ...chapter3.items,
-      [itemName]: itemEnabled
-    }
-  })
-
   return (
-    <div className='Chapter3Clothing'>
-      {items.map(item =>
-        <div
-          onClick={() => setItemEnabled(item.name, !item.enabled)}
-          className={`Item ${item.enabled && 'Item--enabled'}`}
-        >
-          {item.alt}
-        </div>
-      )}
-
-      <Chapter3Avatar containerClassName='Chapter3Clothing__Avatar__container'/>
-    </div>
+      <div className={containerClassName}>
+        <Avatar images={[
+          bulgakovImg,
+          ...items
+            .filter(item => item.enabled)
+            .map(item => item.src)
+        ]} />
+      </div>
   )
 }
 
 
-export default Chapter3Clothing
+export default Chapter3Avatar

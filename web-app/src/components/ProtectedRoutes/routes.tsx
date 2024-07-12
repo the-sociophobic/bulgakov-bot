@@ -44,21 +44,11 @@ const routes: RouteType[] = [
     to: '/start',
     title: 'Начало',
     Comp: <Start />,
-    point: {
-      address: 'Никитина 22',
-      addressShort: 'Музей Пушкина',
-      coords: [44.681387, 43.033782]
-    }
   },
   {
     to: '/disclaimer',
     title: 'Правила пользования ботом',
     Comp: <Disclaimer />,
-    point: {
-      address: 'Никитина 22',
-      addressShort: 'Музей Пушкина',
-      coords: [44.681387, 43.033782]
-    }
   },
   {
     to: '/chapter-1',

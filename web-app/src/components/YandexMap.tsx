@@ -63,7 +63,7 @@ const YandexMap: FC<YandexMapProps> = ({
   ]
 
   return (
-    <div className='YandexMap__container mb-5'>
+    <div className='YandexMap__container mb-2'>
       <div className='YandexMap'>
         <YMap
           location={{ center: center, zoom: getZoom(point0, point1) }}
