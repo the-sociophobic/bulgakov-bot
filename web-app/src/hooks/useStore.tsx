@@ -11,6 +11,9 @@ export type StateType = {
 
   chapter3: Chapter3Type
   setChapter3: (value: Chapter3Type) => void
+
+  chapter8: Chapter8Type
+  setChapter8: (value: Chapter8Type) => void
 }
 
 type Chapter1Type = {
@@ -40,6 +43,10 @@ type Chapter3Type = {
     monocle: boolean
     platok: boolean
   }
+}
+
+type Chapter8Type = {
+  items: number[]
 }
 
 
@@ -77,6 +84,11 @@ const useStore = create<StateType>(set => ({
     }
   },
   setChapter3: (value: Chapter3Type) => set({ chapter3: value }),
+  
+  chapter8: {
+    items: []
+  },
+  setChapter8: (value: Chapter8Type) => set({ chapter8: value }),
   
 }))
 

@@ -1,6 +1,8 @@
 import { FC } from 'react'
 
-import ChapterLayout from '../components/ChapterLayout'
+import ChapterLayout from '../../components/ChapterLayout'
+import Chapter8Avatar from '../../components/Chapter8Avatar'
+import Cards from './Cards'
 
 
 const Chapter8: FC = () => {
@@ -12,7 +14,8 @@ const Chapter8: FC = () => {
       `}
       navigationTitle='Ну поделились и хватит'
     >
-      Найди 2 карточки
+      <Cards />
+      <Chapter8Avatar containerClassName='Chapter8__Avatar__container' />
     </ChapterLayout>
   )
 }

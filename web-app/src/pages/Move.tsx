@@ -16,6 +16,7 @@ import move6 from '../assets/images/move/6.jpg'
 import move7 from '../assets/images/move/7.jpg'
 import move8 from '../assets/images/move/8.jpg'
 import move9 from '../assets/images/move/9.jpg'
+import Chapter8Avatar from '../components/Chapter8Avatar'
 
 
 const Move: FC = () => {
@@ -25,7 +26,8 @@ const Move: FC = () => {
   // const point1 = routes[chapterNumber + 2].point!
   const { Player, audioState } = usePlayer(`${chapterNumber}.mp3`)
   const { text, img } = dictionary[chapterNumber - 1]
-  const showBulgakov = [3, 4, 5, 6, 7, 8].includes(chapterNumber)
+  const showBulgakov3 = [3, 4, 5, 6, 7].includes(chapterNumber)
+  const showBulgakov8 = [8].includes(chapterNumber)
 
   return (
     <Layout
@@ -40,8 +42,11 @@ const Move: FC = () => {
       }]}
     >
       {Player}
-      {showBulgakov &&
+      {showBulgakov3 &&
         <Chapter3Avatar containerClassName='Move__Avatar__container'/>
+      }
+      {showBulgakov8 &&
+        <Chapter8Avatar containerClassName='Move__Avatar__container'/>
       }
       <ImgFramed
         src={img}
