@@ -4,7 +4,7 @@ import ChapterLayout from '../components/ChapterLayout'
 import useTextAnimation from '../hooks/useTextAnimation'
 import ImgFramed from '../components/ImgFramed'
 
-import horseImg from '../assets/images/9/Horse.png'
+import horseImg from '../assets/images/9/Horse-1.png'
 
 
 const Chapter9: FC = () => {

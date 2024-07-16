@@ -16,7 +16,7 @@ export type NavigationProps = Pick<LinkWrapperProps, 'disabled' | 'to' | 'onFirs
 
 export type LayoutProps = {
   title: string
-  description: string
+  description: string | ReactNode
   children: ReactNode
   navigations: NavigationProps[]
 }

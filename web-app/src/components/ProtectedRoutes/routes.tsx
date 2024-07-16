@@ -142,7 +142,7 @@ const routes: RouteType[] = [
   },
   {
     to: '/credits',
-    title: 'Титры',
+    title: 'Над спектаклем работали',
     Comp: <Credits />,
   },
   {

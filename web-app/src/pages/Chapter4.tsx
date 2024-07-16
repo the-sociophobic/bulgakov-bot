@@ -6,6 +6,7 @@ import ImgFramed from '../components/ImgFramed'
 import bulgakov1Img from '../assets/images/4/Bulgacov-1.png'
 import bulgakov2Img from '../assets/images/4/Bulgacov-2.png'
 import bulgakov3Img from '../assets/images/4/Bulgacov-3.png'
+import bulgakov4Img from '../assets/images/4/Bulgacov-4.png'
 
 import chain1Img from '../assets/images/4/Chain-1.png'
 import chain2Img from '../assets/images/4/Chain-2.png'
@@ -37,7 +38,7 @@ const steps = [
   {
     chain: chain4Img,
     item: vodkaImg,
-    Bulgakov: bulgakov3Img,
+    Bulgakov: bulgakov4Img,
   },
 ]
 
