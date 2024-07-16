@@ -415,3 +415,36 @@ $member-height-inline: 24px
   transform: translate(-50%, -50%)
   @extend .d-flex
   @extend .flex-row
+
+.RadioTwo
+  @extend .d-flex
+  @extend .flex-row
+  @extend .flex-wrap
+  @extend .justify-content-start
+  @extend .mb-2
+  &__option
+    @extend .mx-1
+    &--selected
+      text-decoration: underline
+    &--not-selescted
+      text-decoration: line-through
+
+.Chapter6Newspaper
+  width: 100%
+  padding-top: 142%
+  position: relative
+  &__text,
+  &__img
+    position: absolute
+  &__text
+    top: 23%
+    left: 3%
+    width: 34%
+    height: 75%
+    font-size: 10px
+    text-align: justify
+  &__img
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
