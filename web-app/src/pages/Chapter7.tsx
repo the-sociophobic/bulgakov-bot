@@ -1,9 +1,15 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import ChapterLayout from '../components/ChapterLayout'
+import { FiberScene } from '../components/Fiber/FiberScene'
 
 
 const Chapter7: FC = () => {
+  const [found, setFound] = useState(false)
+  const onClick = () => {
+    setFound(true)
+  }
+
   return (
     <ChapterLayout
       number={7}
@@ -12,11 +18,12 @@ const Chapter7: FC = () => {
 
 
         Где прячется Михаил Булгаков?
-        Найдите Михаила Булгакова на площади. 
+
+        ${found ? 'Вы нашли Булгакова!' : 'Найдите Михаила Булгакова на площади.'}
       `}
-      navigationTitle='Не могу найти'
+      navigationTitle={found ? 'Далее!' : 'Не могу найти'}
     >
-      Печатная машинка
+      <FiberScene onClick={onClick} />
     </ChapterLayout>
   )
 }
