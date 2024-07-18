@@ -12,6 +12,7 @@ export type MapPointType = {
 export type MapProps = {
   point0: MapPointType
   point1: MapPointType
+  hidePoints?: boolean
 }
 
 

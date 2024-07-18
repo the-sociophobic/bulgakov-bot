@@ -32,6 +32,7 @@ import { MapPointType } from '../pages/Map'
 export type YandexMapProps = {
   point0: MapPointType
   point1: MapPointType
+  hidePoints?: boolean
 }
 
 
@@ -44,7 +45,7 @@ export type YandexMapProps = {
 
 const getZoom = (
   point0: MapPointType,
-  point1: MapPointType
+  point1: MapPointType,
 ) => {
   const distance = Math.sqrt((point0.coords[0] - point1.coords[0]) ** 2 + (point0.coords[1] - point1.coords[1]) ** 2) * 10000
   const distanceZoom = [[15, 16.2], [47, 14.8]]
@@ -56,6 +57,7 @@ const getZoom = (
 const YandexMap: FC<YandexMapProps> = ({
   point0,
   point1,
+  hidePoints
 }) => {
   const center: [number, number] = [
     (point0.coords[0] + point1.coords[0]) / 2,
@@ -97,16 +99,18 @@ const YandexMap: FC<YandexMapProps> = ({
             ]}
           />
           <YMapDefaultFeaturesLayer />
-          <YMapDefaultMarker
-            title='Отсюда'
-            color='brown'
-            coordinates={point0.coords}
-          />
-          <YMapDefaultMarker
-            title='Сюда'
-            color='red'
-            coordinates={point1.coords}
-          />
+          {!hidePoints && <>
+            <YMapDefaultMarker
+              title='Отсюда'
+              color='brown'
+              coordinates={point0.coords}
+            />
+            <YMapDefaultMarker
+              title='Сюда'
+              color='red'
+              coordinates={point1.coords}
+            />
+          </>}
         </YMap>
       </div>
     </div>

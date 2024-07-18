@@ -26,7 +26,9 @@ const App: FC = () => {
 
   return (
     <QueryWrapper>
-      <YMapComponentsProvider apiKey={apiKey}>
+      <YMapComponentsProvider
+        apiKey={apiKey}
+      >
         <div className='App'>
           <div className='content'>
             <ProtectedRoutes />

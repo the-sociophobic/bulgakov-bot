@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
-// import routes from '../components/ProtectedRoutes/routes'
+import routes from '../components/ProtectedRoutes/routes'
 import usePlayer from '../hooks/usePlayer'
 import Layout from '../components/Layout'
-// import Map from './Map'
+import Map from './Map'
 import Chapter3Avatar from '../components/Chapter3Avatar'
 import ImgFramed from '../components/ImgFramed'
 import useParams from '../hooks/useParams'
@@ -16,6 +16,15 @@ import move6 from '../assets/images/move/6.jpg'
 import move7 from '../assets/images/move/7.jpg'
 import move8 from '../assets/images/move/8.jpg'
 import move9 from '../assets/images/move/9.jpg'
+
+import map1 from '../assets/images/move/maps/1.png'
+import map2 from '../assets/images/move/maps/2.png'
+import map3 from '../assets/images/move/maps/3.png'
+import map4 from '../assets/images/move/maps/4.png'
+import map5 from '../assets/images/move/maps/5.png'
+import map6 from '../assets/images/move/maps/6.png'
+import map7 from '../assets/images/move/maps/7.png'
+import map8 from '../assets/images/move/maps/8.png'
 import Chapter8Avatar from '../components/Chapter8Avatar'
 
 
@@ -25,7 +34,7 @@ const Move: FC = () => {
   // const point0 = routes[chapterNumber + 1].point!
   // const point1 = routes[chapterNumber + 2].point!
   const { Player, audioState } = usePlayer(`${chapterNumber}.mp3`)
-  const { text, img } = dictionary[chapterNumber - 1]
+  const { text, img, map } = dictionary[chapterNumber - 1]
   const showBulgakov3 = [3, 4, 5, 6, 7].includes(chapterNumber)
   const showBulgakov8 = [8].includes(chapterNumber)
 
@@ -48,13 +57,20 @@ const Move: FC = () => {
       {showBulgakov8 &&
         <Chapter8Avatar containerClassName='Move__Avatar__container'/>
       }
+      {/* <Map {...{ point0, point1 }} /> */}
+      {/* <Map {...{ point0, point1 }} /> */}
+      <ImgFramed
+        src={map}
+        className='mx-auto my-2'
+        width={300}
+        height={180}
+      />
       <ImgFramed
         src={img}
         className='mx-auto my-2'
         width={300}
         height={180}
       />
-      {/* <Map {...{ point0, point1 }} /> */}
     </Layout>
   )
 }
@@ -63,43 +79,68 @@ const Move: FC = () => {
 const dictionary = [
   {
     text: <>Идите до Музея истории Владикавказа<br />
-    улица Революции, 61 </>,
+    улица Революции, 61
+    <br />
+    Следуйте направо до ул. Революции, затем - поверните налево и следуйте до конца квартала
+    </>,
     img: move2,
+    map: map1,
   },
   {
     text: <>Идите до скульптуры Владимира Соскиева «Пушкин на Кавказе»<br />
-    улица Миллера, 26 </>,
+    улица Миллера, 26<br />
+    Поверните направо, следуйте до конца квартала, поверните налево, следуйте по улице Кирова, до ближайшего перехода, перейдите на противоположную сторону, следуйте в заданном направлении до памятника
+    </>,
     img: move3,
+    map: map2,
   },
   {
     text: <>Идите до дома Булгакова<br />
-    улица Маяковского, 9 </>,
+    улица Маяковского, 9<br />
+    На светофоре поверните налево, следуйте через перекресток по ул. Миллера до ул.Маяковского, затем- поверните направо, следуйте до конца квартала
+    </>,
     img: move4,
+    map: map3,
   },
   {
     text: <>Идите до памятника скульптора Станислава Тавасиева М.А. Булгакову<br />
-    проспект Мира, 46 </>,
+    проспект Мира, 46<br />
+    Развернитесь, следуйте в обратном направлении до ул. Миллера, далее - не сворачивая, до памятника М. Булгакову
+    </>,
     img: move5,
+    map: map4,
   },
   {
     text: <>Идите до библиотеки им. Гайто Газданова,<br />
-    проспект Мира, 34 </>,
+    проспект Мира, 34<br />
+    Поверните направо, следуйте до ближайшего перекрестка, перейдите на противоположную сторону прос. Мира, следуйте до библиот
+    </>,
     img: move6,
+    map: map5,
   },
   {
     text: <>Идите до Академического русского театра имени Е. Б. Вахтангова»<br />
-    площадь Ленина, 3 </>,
+    площадь Ленина, 3<br />
+    Следуйте до площади Ленина
+    </>,
     img: move7,
+    map: map6,
   },
   {
     text: <>Идите до Министерства образования РСО-Алания<br />
-    улица Ленина, 7 </>,
+    улица Ленина, 7<br />
+    Следуйте по просп.Мира до входа в Центральный парк, поверните налево, следуйте до ул. Ленина
+    </>,
     img: move8,
+    map: map7,
   },
   {
     text: <>Идите до входа в Парк Культуры и Отдыха им. К.Л. Хетагурова»<br />
-    проспект Мира, 7 </>,
+    проспект Мира, 7<br />
+    Развернитесь, следуйте в обратном направлении до Центрального парка, войдите в парк, поверните налево, следуйте до выхода из парка на площадь Свободы
+    </>,
     img: move9,
+    map: map8,
   },
 ]
 
