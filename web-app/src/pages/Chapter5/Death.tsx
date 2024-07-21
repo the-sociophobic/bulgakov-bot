@@ -18,7 +18,7 @@ const Chapter5: FC = () => {
         },
       ]}
     >
-      <Img src={deathImg} className='w-50'/>
+      <Img src={deathImg} className='w-75 mx-auto'/>
     </ChapterLayout>
   )
 }

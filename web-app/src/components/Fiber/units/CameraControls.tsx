@@ -14,7 +14,7 @@ export const CameraControls: React.FC = () => {
       return
 
     controls.target.set(0, 0, 0)
-    controls.object.position.set(0, 0, -.25)
+    controls.object.position.set(.25, 0, 0)
     // controls.
     controls.update()
   }, [])
