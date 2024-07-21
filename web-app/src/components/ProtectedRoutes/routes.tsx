@@ -27,7 +27,7 @@ import Chapter9 from '../../pages/Chapter9'
 import Move from '../../pages/Move'
 import Credits from '../../pages/Credits'
 
-import { MapPointType } from '../../pages/Map'
+import { MapPointType } from '../Map'
 
 
 export type RouteType = {
