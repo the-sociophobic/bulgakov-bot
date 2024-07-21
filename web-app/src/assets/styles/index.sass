@@ -297,12 +297,15 @@ $member-height-inline: 24px
 
 .YandexMap__container
   width: 100%
-  height: 230px
+  padding-top: 65.909%
   overflow-y: hidden
   position: relative
   .YandexMap
+    position: absolute
+    top: 0
+    left: 0
     width: 100%
-    height: 290px
+    height: 126%
   .YandexMap__routeImg
     @extend .abs-cover
 
@@ -479,3 +482,36 @@ $member-height-inline: 24px
   position: relative
   width: 70vw
   height: 100vw
+
+
+.Slideshow
+  position: relative
+  width: 100%
+  &__container
+    overflow-x: scroll
+    overflow-y: visible
+    display: flex
+    flex-direction: row
+  &__slide
+    &:first-of-type
+      width: 75vw
+    &:last-of-type
+      width: 90vw      
+  &__points
+    position: absolute
+    top: 20px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1000
+    @extend .d-flex
+    @extend .flex-row
+    &__item
+      width: 12px
+      height: 12px
+      border-radius: 12px
+      background-color: $main-text
+      opacity: .3
+      cursor: pointer
+      @extend .mx-2
+      &--current
+        opacity: .7
