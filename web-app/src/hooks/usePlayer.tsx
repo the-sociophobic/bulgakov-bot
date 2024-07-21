@@ -49,7 +49,6 @@ const usePlayer = (src: string) => {
   const location = useLocation()
 
   useEffect(() => {
-    console.log(audio)
     audio.pause()
   }, [location.pathname, location.search])
 

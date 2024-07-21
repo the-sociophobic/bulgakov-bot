@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import YandexMap from '../components/YandexMap'
+import YandexMap from './YandexMap'
 
 
 export type MapPointType = {
@@ -13,6 +13,8 @@ export type MapProps = {
   point0: MapPointType
   point1: MapPointType
   hidePoints?: boolean
+  routeImg: string
+  mapImg: string
 }
 
 

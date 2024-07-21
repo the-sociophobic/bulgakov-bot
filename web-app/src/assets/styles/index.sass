@@ -299,10 +299,16 @@ $member-height-inline: 24px
   width: 100%
   height: 230px
   overflow-y: hidden
+  position: relative
   .YandexMap
     width: 100%
     height: 290px
+  .YandexMap__routeImg
+    @extend .abs-cover
 
+.mapImg
+  width: 50px !important
+  transform: translate(-50%, -50%)
 
 .Img
   width: 100%
