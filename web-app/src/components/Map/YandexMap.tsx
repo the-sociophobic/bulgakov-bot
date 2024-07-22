@@ -38,10 +38,10 @@ const YandexMap: FC<YandexMapProps> = ({
     setUserGeo(geo.coords)
   }
   useEffect(() => {
-    updUserGeo()
-    // const intervalId = setInterval(updUserGeo, 300)
+    // updUserGeo()
+    const intervalId = setInterval(updUserGeo, 300)
 
-    // return () => clearInterval(intervalId)
+    return () => clearInterval(intervalId)
   }, [])
 
 
