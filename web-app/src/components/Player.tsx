@@ -1,14 +1,15 @@
 import { FC } from 'react'
 
 import {
-  CaretRightOutlined,
-  PauseOutlined,
   LoadingOutlined,
   SyncOutlined
 } from '@ant-design/icons'
 
 import parseTime from '../utils/parseTime'
 import { AnimationState } from '../utils/constants'
+
+import playImg from '../assets/images/common/Play.png'
+import pauseImg from '../assets/images/common/Pause.png'
 
 
 export type PlayerProps = {
@@ -31,9 +32,9 @@ const Player: FC<PlayerProps> = ({
     // return <div>{audioState}</div>
     switch(audioState) {
       case 'playing':
-        return <PauseOutlined />
+        return <img src={pauseImg} className='Play-img' />
       case 'paused':
-        return <CaretRightOutlined />
+        return <img src={playImg} className='Play-img' />
       case 'loading':
         return <LoadingOutlined />
       case 'ended':

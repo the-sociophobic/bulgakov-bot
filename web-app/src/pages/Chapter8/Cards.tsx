@@ -23,7 +23,7 @@ const Cards: FC<CardsProps> = ({
   const { chapter8 } = useStore()
   const { setChapter8 } = useStore()
   const openDeckNumber = (deckCardIndex: number) => {
-    if (!canPlay || openedDeckNumbers.includes(deckCardIndex))
+    if (!canPlay || openedDeckNumbers.includes(deckCardIndex) || openedDeckNumbers.length >= 8)
       return
 
     setOpenedDeckNumbers([...openedDeckNumbers, deckCardIndex])
@@ -54,6 +54,7 @@ const Cards: FC<CardsProps> = ({
           img={dictionary[deckCard].img}
         />
       )}
+      {openedDeckNumbers.length >= 8 && 'Больше вещей взять не получится'}
     </div>
   )
 }

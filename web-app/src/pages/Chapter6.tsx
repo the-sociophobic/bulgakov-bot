@@ -61,8 +61,10 @@ const Chapter6: FC = () => {
       {(sent && user) ?
         <>
           <Chapter6Newspaper text={
+            'Недавно посетил пьесу нового автора, некоего Булгакова «Турбины» с ударением на последний слог. ' +
             dictionary.map((item, itemIndex) =>
               (itemIndex === 3 ? `Автор этих строк, ${printUsername(user)}, покидал спектакль в ` : item.start) + ' ' + item.value + '. ').join('')
+            + 'Всё это явно выходит за рамки. Но такова суть искусства.'
           } />
         </>
         :

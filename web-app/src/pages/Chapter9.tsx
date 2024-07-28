@@ -37,7 +37,7 @@ const Chapter9: FC = () => {
       number={9}
       description={`…в которой Михаил Булгаков пишет….`}
       navigations={[{
-        title: 'Круто!',
+        title: 'Спектакль окончен!',
         to: '/credits'
       }]}
     >

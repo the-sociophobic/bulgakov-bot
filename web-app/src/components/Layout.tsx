@@ -45,9 +45,9 @@ const Layout: FC<LayoutProps> = ({
         {children}
       </div>
 
-      {navigations.map(navigation =>
+      {navigations.map((navigation, navigationIndex) =>
         <LinkWrapper
-          className='mt-auto NavigationZ'
+          className={`${navigationIndex === 0 && 'mt-auto'} NavigationZ`}
           key={navigation.title}
           to={navigation.to}
           disabled={navigation.disabled}

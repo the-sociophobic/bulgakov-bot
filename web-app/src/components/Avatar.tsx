@@ -14,6 +14,7 @@ const Avatar: FC<AvatarProps> = ({
     <div className='Avatar'>
       {images.map(image =>
         <Img
+          key={image}
           src={image}
           className='Avatar__image'
         />

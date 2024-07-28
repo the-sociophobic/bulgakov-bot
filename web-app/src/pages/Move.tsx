@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { isAndroid } from 'react-device-detect'
+
 import routes from '../components/ProtectedRoutes/routes'
 import usePlayer from '../hooks/usePlayer'
 import Layout from '../components/Layout'
@@ -66,25 +68,27 @@ const Move: FC = () => {
         <div className='w-100'>
           {text}
         </div>,
-        <>
+        !isAndroid ?
           <Map
             {...{ point0, point1 }}
             mapImg={map}
             routeImg={routeImg}
           />
-          {/* <ImgFramed
+          :
+          <ImgFramed
             src={map}
             className='mx-auto my-2'
             width={300}
             height={180}
-          /> */}
-          <ImgFramed
-            src={img}
-            className='mx-auto my-2'
-            width={300}
-            height={180}
           />
-        </>
+        ,
+        <ImgFramed
+          src={img}
+          className='mx-auto my-2'
+          width={300}
+          height={180}
+        />
+
       ]} />
 
       {showBulgakov3 &&
@@ -112,7 +116,7 @@ const dictionary = [
   {
     text: <>Идите до скульптуры Владимира Соскиева «Пушкин на Кавказе»<br />
       улица Миллера, 26<br />
-      Поверните направо, следуйте до конца квартала, поверните налево, следуйте по улице Кирова, до ближайшего перехода, перейдите на противоположную сторону, следуйте в заданном направлении до памятника
+      Поверните направо, следуйте до конца квартала, поверните налево, следуйте по улице Кирова, до ближайшего перехода, перейдите на противоположную сторону, следуйте в заданном направлении до скульптуры
     </>,
     img: move3,
     map: map2,

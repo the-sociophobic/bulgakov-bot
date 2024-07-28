@@ -259,6 +259,8 @@ $member-height-inline: 24px
 .Player
   display: flex
   flex-direction: row
+  .Play-img
+    width: 50px
   &__button
     border: 1px solid $main-text
     cursor: pointer
@@ -487,31 +489,35 @@ $member-height-inline: 24px
 .Slideshow
   position: relative
   width: 100%
+  margin-bottom: 40px
   &__container
     overflow-x: scroll
     overflow-y: visible
     display: flex
     flex-direction: row
   &__slide
-    &:first-of-type
-      width: 75vw
-    &:last-of-type
-      width: 90vw      
+    width: 100vw
+    // &:first-of-type
+    //   width: 75vw
+    // &:last-of-type
+    //   width: 90vw      
   &__points
     position: absolute
-    top: 20px
+    bottom: -20px
     left: 50%
     transform: translateX(-50%)
     z-index: 1000
     @extend .d-flex
     @extend .flex-row
     &__item
-      width: 12px
-      height: 12px
-      border-radius: 12px
+      width: 8px
+      height: 8px
+      border-radius: 8px
       background-color: $main-text
       opacity: .3
       cursor: pointer
-      @extend .mx-2
+      @extend .mx-1
       &--current
         opacity: .7
+
+

@@ -15,7 +15,7 @@ const Chapter5: FC = () => {
           to: '/death',
         },
         {
-          title: 'Попасть в плен',
+          title: 'Нет, не то, не то',
           to: '/shot',
         },
       ]}
