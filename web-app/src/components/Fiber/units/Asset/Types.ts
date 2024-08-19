@@ -9,6 +9,7 @@ export type AssetData = {
 export type AssetRenderData = {
   asset: AssetData
   onClick?: () => void
+  loopAnimations?: boolean
 }
 
 export type GLTF_Type = (GLTF & ObjectMap)

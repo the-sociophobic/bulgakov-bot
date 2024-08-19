@@ -10,7 +10,8 @@ import { AssetRenderData } from './Types'
 
 export const AssetRender: FC<AssetRenderData> = ({
   asset: _asset,
-  onClick
+  onClick,
+  loopAnimations
 }) => {
   const asset = useMemo(() => useLoader(GLTFLoader, _asset.model_path), [_asset])
   const assetAnimations = useAnimations(asset.animations, asset.scene)
@@ -46,13 +47,31 @@ export const AssetRender: FC<AssetRenderData> = ({
       }
     })
   }
-  
+
+  const startLoopAnimations = () => {
+    assetAnimations.names.forEach(actionName => {
+      const action = assetAnimations.actions[actionName]
+      if (action && !action.isRunning()) {
+        action.reset()
+        action.setLoop(THREE.LoopRepeat, 1000)
+        action.timeScale = 1
+        action.time = 0
+        action.play()
+      }
+    })
+  }
+
+  useEffect(() => {
+    if (loopAnimations)
+      startLoopAnimations()
+  }, [loopAnimations])
+
   return (
     <primitive
       object={asset.scene}
       onClick={() => {
         onClick?.()
-        if (!playedOnce) {
+        if (!playedOnce && !loopAnimations) {
           playAnimations()
           setPlayedOnce(true)
         }

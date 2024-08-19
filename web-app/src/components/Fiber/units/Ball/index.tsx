@@ -12,7 +12,10 @@ const Ball: FC<BallProps> = ({
 }) => {
   return (
     <>
-      <AssetRender asset={{ model_path: '/bulgakov-bot/3d/all.glb' }} />
+      <AssetRender
+        asset={{ model_path: '/bulgakov-bot/3d/all.glb' }}
+        loopAnimations
+      />
       <AssetRender
         asset={{ model_path: '/bulgakov-bot/3d/Bulgakov.glb' }}
         onClick={onClick}
