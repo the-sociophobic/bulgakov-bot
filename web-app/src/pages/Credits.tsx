@@ -27,9 +27,9 @@ const Credits: FC = () => {
       <br /><br />
       режиссер: Максим Карнаухов<br />
       драматург:  Алина Шклярская<br />
+      разработчик: <LinkWrapper className='text-black' to='https://леф.рф'>Леф Васильев</LinkWrapper>
       художник: Ольга Шабатура<br />
       саунд-дизайн: Антон Шанихин<br />
-      разработчик: <LinkWrapper className='text-black' to='https://леф.рф'>Леф Васильев</LinkWrapper>
       <br /><br />
       актеры: Ниёле Мейруле, Дмитрий Бутеев, Владимир Лесных, Надежда Некрасова<br /><br />
       <Chapter8Avatar containerClassName='Credits__Avatar__container' />
